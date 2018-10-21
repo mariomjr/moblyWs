@@ -1,17 +1,9 @@
-package br.com.mobyWs.entity;
-
-import java.io.Serializable;
-import java.time.LocalDate;
-
-import org.springframework.data.annotation.Id;
+package br.com.mobyWs.dto;
 
 import br.com.mobyWs.enums.EnumTipoUsuario;
 
-public class Usuario implements Serializable{
-	
-	private static final long serialVersionUID = 8646918060853291092L;
+public class UsuarioDto {
 
-	@Id
 	private String id;
 	
 	private String nome;
@@ -27,7 +19,7 @@ public class Usuario implements Serializable{
 	private Long dataNascimento;
 	
 	private EnumTipoUsuario tipo;
-	
+
 	public String getId() {
 		return id;
 	}
@@ -50,14 +42,6 @@ public class Usuario implements Serializable{
 
 	public void setCpfCnpj(String cpfCnpj) {
 		this.cpfCnpj = cpfCnpj;
-	}
-
-	public EnumTipoUsuario getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(EnumTipoUsuario tipo) {
-		this.tipo = tipo;
 	}
 
 	public String getEmail() {
@@ -92,4 +76,11 @@ public class Usuario implements Serializable{
 		this.dataNascimento = dataNascimento;
 	}
 
+	public EnumTipoUsuario getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(EnumTipoUsuario tipo) {
+		this.tipo = tipo;
+	}
 }
