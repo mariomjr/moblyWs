@@ -1,47 +1,24 @@
-package br.com.moblyWs.entity;
-
-import java.io.Serializable;
-
-import org.springframework.data.annotation.Id;
+package br.com.moblyWs.dto;
 
 import br.com.moblyWs.enums.EnumTipoUsuario;
 
-public class Usuario implements Serializable{
-	
-	private static final long serialVersionUID = 8646918060853291092L;
+public class UsuarioCreateDto {
 
-	@Id
-	private String id;
-	
 	private String nome;
 	
 	private String cpfCnpj;
 	
 	private String email;
 	
+	private String senha;
+	
 	private String telefone;
 	
 	private String numeroCnh;
 	
-	private String senha;
-	
 	private Long dataNascimento;
 	
 	private EnumTipoUsuario tipo;
-	
-	public Usuario() {}
-	
-	public Usuario(String id) {
-		this.id = id;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public String getNome() {
 		return nome;
@@ -57,14 +34,6 @@ public class Usuario implements Serializable{
 
 	public void setCpfCnpj(String cpfCnpj) {
 		this.cpfCnpj = cpfCnpj;
-	}
-
-	public EnumTipoUsuario getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(EnumTipoUsuario tipo) {
-		this.tipo = tipo;
 	}
 
 	public String getEmail() {
@@ -99,6 +68,14 @@ public class Usuario implements Serializable{
 		this.dataNascimento = dataNascimento;
 	}
 
+	public EnumTipoUsuario getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(EnumTipoUsuario tipo) {
+		this.tipo = tipo;
+	}
+
 	public String getSenha() {
 		return senha;
 	}
@@ -106,4 +83,5 @@ public class Usuario implements Serializable{
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	
 }

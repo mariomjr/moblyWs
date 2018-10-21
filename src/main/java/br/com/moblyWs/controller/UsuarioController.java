@@ -1,5 +1,6 @@
 package br.com.moblyWs.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,15 +9,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.moblyWs.dto.AvaliacaoCreateDto;
 import br.com.moblyWs.dto.CartaoCreateDto;
 import br.com.moblyWs.dto.CartaoViewDto;
+import br.com.moblyWs.dto.UsuarioCreateDto;
 import br.com.moblyWs.dto.UsuarioDto;
+import br.com.moblyWs.dto.VeiculoDto;
 import br.com.moblyWs.entity.Usuario;
 import br.com.moblyWs.mapper.UsuarioMapper;
 import br.com.moblyWs.response.Response;
@@ -34,10 +39,10 @@ public class UsuarioController {
 
 	@PostMapping
 	@ApiOperation("Criação do usuário")
-	public ResponseEntity<Response<UsuarioDto>> create(HttpServletRequest request, @RequestBody UsuarioDto usuario,
+	public ResponseEntity<Response<UsuarioDto>> create(HttpServletRequest request, @RequestBody UsuarioCreateDto usuario,
 			BindingResult result){
 		Response<UsuarioDto> response = new Response<UsuarioDto>();
-		Usuario usuarioCreate = usuarioService.createOrUpdate(UsuarioMapper.INSTANCE.doDto(usuario));
+		Usuario usuarioCreate = usuarioService.createOrUpdate(UsuarioMapper.INSTANCE.doCreateDto(usuario));
 		response.setData(UsuarioMapper.INSTANCE.paraDto(usuarioCreate));
 		return ResponseEntity.ok(response);
 	}
@@ -61,8 +66,21 @@ public class UsuarioController {
 	public ResponseEntity<Response<CartaoViewDto>> cadastroCartao(HttpServletRequest request, @RequestBody CartaoCreateDto cartaoDto,
 			BindingResult result){
 		Response<CartaoViewDto> response = new Response<CartaoViewDto>();
-//		Usuario usuarioCreate = usuarioService.createOrUpdate(usuario);
-//		response.setData(usuarioCreate);
+		return ResponseEntity.ok(response);
+	}
+	
+	@GetMapping(path="/veiculos")
+	@ApiOperation("Busca os veículos do usuário")
+	public ResponseEntity<Response<List<VeiculoDto>>> getVeiculos(@PathVariable("idUsuario") String idUsuario){
+		Response<List<VeiculoDto>> response = new Response<List<VeiculoDto>>();
+		return ResponseEntity.ok(response);
+	}
+	
+	@PostMapping(value="/avaliar")
+	@ApiOperation("Realiza avaliação")
+	public ResponseEntity<Response<String>> avaliar(HttpServletRequest request, @RequestBody AvaliacaoCreateDto avaliacaoCreateDto,
+			BindingResult result){
+		Response<String> response = new Response<String>();
 		return ResponseEntity.ok(response);
 	}
 }

@@ -6,6 +6,7 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
+import br.com.moblyWs.dto.UsuarioCreateDto;
 import br.com.moblyWs.dto.UsuarioDto;
 import br.com.moblyWs.entity.Usuario;
 
@@ -17,6 +18,9 @@ public interface UsuarioMapper {
 	
     @Mappings(@Mapping(target = "id", ignore = true))
     Usuario doDto (UsuarioDto source);
+    
+    @Mappings(@Mapping(target = "id", ignore = true))
+    Usuario doCreateDto (UsuarioCreateDto source);
     
     void atualizar(UsuarioDto source, @MappingTarget Usuario target);
 }
