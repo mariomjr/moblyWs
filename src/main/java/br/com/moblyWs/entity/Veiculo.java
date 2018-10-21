@@ -17,6 +17,8 @@ public class Veiculo implements Serializable{
 	
 	private String renavan;
 	
+	private String descricao;
+	
 	private Usuario proprietario;
 	
 	private EnumTipoVeiculo tipo;
@@ -43,6 +45,14 @@ public class Veiculo implements Serializable{
 
 	public void setRenavan(String renavan) {
 		this.renavan = renavan;
+	}
+	
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public Usuario getProprietario() {

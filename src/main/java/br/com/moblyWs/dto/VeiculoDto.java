@@ -10,6 +10,8 @@ public class VeiculoDto {
 	
 	private String renavan;
 	
+	private String descricao;
+	
 	private ObjectIdDto proprietario;
 	
 	private EnumTipoVeiculo tipo;
@@ -20,6 +22,14 @@ public class VeiculoDto {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public String getPlaca() {

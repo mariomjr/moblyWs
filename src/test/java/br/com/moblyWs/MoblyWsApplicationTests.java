@@ -1,4 +1,4 @@
-package br.com.mobyWs;
+package br.com.moblyWs;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MobyWsApplicationTests {
+public class MoblyWsApplicationTests {
 
 	@Test
 	public void contextLoads() {
