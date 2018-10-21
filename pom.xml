@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.com</groupId>
-	<artifactId>mobyWs</artifactId>
+	<artifactId>moblyWs</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>mobyWs</name>
-	<description>Project moby</description>
+	<name>moblyWs</name>
+	<description>Project mobly</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -22,7 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-        <docker.image.prefix>mobyWs</docker.image.prefix>
+        <docker.image.prefix>moblyWs</docker.image.prefix>
 	</properties>
 
 	<dependencies>
